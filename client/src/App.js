@@ -1,10 +1,13 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import SignUp from './components/SignUp/SignUp';
+import AppRouter from './components/AppRouter';
 
 function App() {
   return (
     <div>
-      <SignUp />
+      <Router>
+        <AppRouter />
+      </Router>
     </div>
   );
 }
