@@ -21,6 +21,7 @@ router.post('/login', async (req, res) => {
 
     const jwtToken = jwt.sign({ id: userWithEmail.id, email: userWithEmail.email }, process.env.JWT_SECRET);
 
+    res.cookie('jwtToken', jwtToken, { httpOnly: true });
     res.json({ message: 'Welcome!', token: jwtToken });
 })
 
